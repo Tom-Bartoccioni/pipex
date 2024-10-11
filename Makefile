@@ -6,7 +6,7 @@
 #    By: tbartocc <tbartocc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/02 15:18:00 by tbartocc          #+#    #+#              #
-#    Updated: 2024/10/11 11:42:58 by tbartocc         ###   ########.fr        #
+#    Updated: 2024/10/11 14:17:22 by tbartocc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,4 +54,4 @@ tester: end
 end:
 	@rm -rf 42_pipex_tester
 
-.PHONY: all clean fclean re debug tester checker visualizer
+.PHONY: all clean fclean re debug tester
