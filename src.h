@@ -6,7 +6,7 @@
 /*   By: tbartocc <tbartocc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 13:57:26 by tbartocc          #+#    #+#             */
-/*   Updated: 2024/10/11 11:57:09 by tbartocc         ###   ########.fr       */
+/*   Updated: 2024/10/18 17:11:26 by tbartocc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_fd
 
 void	close_p(int **pipes, int index);
 void	exec(char *cmd, char **env, int **pipes, t_fd *fd);
+void	free_all_and_exit_1(int **pipes, t_fd *fd);
 void	free_p(int **pipes);
 char	*get_next_line(int fd);
 char	*get_path(char *cmd, char **env);

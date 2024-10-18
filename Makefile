@@ -6,7 +6,7 @@
 #    By: tbartocc <tbartocc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/02 15:18:00 by tbartocc          #+#    #+#              #
-#    Updated: 2024/10/11 14:17:22 by tbartocc         ###   ########.fr        #
+#    Updated: 2024/10/16 17:02:45 by tbartocc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,12 @@ SRC_COMMON =	get_next_line.c \
 SRC = $(SRC_COMMON)\
 	pipex.c \
 
+SRC_BONUS = $(SRC_COMMON)\
+	bonus.c \
+
 OBJ = $(SRC:.c=.o)
+
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
 
 all: $(NAME)
 
@@ -36,7 +41,7 @@ $(NAME): $(OBJ)
 	@$(CC) $(CFLAGS) $(OBJ) $(PRINTF)libftprintf.a -o $(NAME)
 
 clean:
-	@rm -f $(OBJ)
+	@rm -f $(OBJ) $(OBJ_BONUS)
 	@$(MAKE) --no-print-directory -C $(PRINTF) clean
 	@$(MAKE) --no-print-directory -C $(LIBFT) clean
 
@@ -46,6 +51,10 @@ fclean: clean
 	@$(MAKE) --no-print-directory -C $(LIBFT) fclean
 
 re: fclean all
+
+bonus: $(OBJ_BONUS)
+	@$(MAKE) --no-print-directory -C $(PRINTF)
+	@$(CC) $(CFLAGS) $(OBJ_BONUS) $(PRINTF)libftprintf.a -o $(NAME)
 
 tester: end
 	@git clone https://github.com/michmos/42_pipex_tester.git

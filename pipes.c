@@ -6,7 +6,7 @@
 /*   By: tbartocc <tbartocc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 16:46:22 by tbartocc          #+#    #+#             */
-/*   Updated: 2024/10/11 11:36:36 by tbartocc         ###   ########.fr       */
+/*   Updated: 2024/10/18 17:11:13 by tbartocc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,14 @@ void	free_p(int **pipes)
 		++i;
 	}
 	free(pipes);
+}
+
+void	free_all_and_exit_1(int **pipes, t_fd *fd)
+{
+	free_p(pipes);
+	free(fd->fd);
+	free(fd);
+	exit(1);
 }
 
 int	**open_pipes(int nbr_pipes)
